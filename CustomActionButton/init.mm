@@ -33,7 +33,7 @@ static void custom(id self, SEL _cmd, NSUInteger event, id context) {
 
 static void swizzle() {
     Method method = class_getInstanceMethod(NSClassFromString(@"SBActionButtonMetric"), NSSelectorFromString(@"handleEvent:withContext:"));
-    original = reinterpret_cast<void (*)(id, SEL, NSUInteger, id)>(method_getImplementation(method));
+    original = reinterpret_cast<void (*)(id, SEL, NSUInteger, id)>(*method_getImplementation(method));
     method_setImplementation(method, reinterpret_cast<IMP>(&custom));
 }
 }
