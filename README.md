@@ -11,3 +11,5 @@ Assign custom action into iPhone 15 Pro's Action Button.
  
  % xcrun simctl spawn booted launchctl stop com.apple.SpringBoard
 ```
+
+![](0.gif)
